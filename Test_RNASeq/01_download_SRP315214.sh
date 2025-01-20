@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Pas besoin d'être en bash 
+# Se mettre dans le bon dossier dans l appli pour utiliser la commande fastq-dump
 cd Desktop/sratoolkit.3.1.1-win64/sratoolkit.3.1.1-win64/bin
 
 # https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA722734&o=acc_s%3Aa
@@ -26,6 +28,7 @@ SRR14267566"
 
 for SRR in $sra_accessions
 do
+    echo %time%
     echo "Prefetch $SRR"
     prefetch "$SRR"
     

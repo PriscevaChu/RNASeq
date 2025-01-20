@@ -1,8 +1,14 @@
 setwd("C:/Users/prisc/Documents/Etudes/RNA_SEQ/data")
 
+
+library(fastqcr)
+
 # install.packages("BiocManager")
 # BiocManager::install("SRAdb")
 # BiocManager::install("sraR")
+
+
+
 
 library("SRAdb")
 
