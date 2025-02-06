@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /mnt/c/Users/prisc/Documents/Etudes/RNA_SEQ/data
 
-mkdir -p 01_toy_data/reference_transcriptome
+mkdir -p reference_transcriptome
 
 cd reference_transcriptome
 
