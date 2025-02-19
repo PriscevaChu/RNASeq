@@ -1,11 +1,11 @@
 # RNASeq
 
-Ce projet GitHub ne contient que les scripts. Les données et les résultats sont sauvegardés en local car trop lourds.
+Ce projet GitHub ne contient que les scripts. Les données et les résultats sont sauvegardés en local.
 
-## HclRNAseq 
+## Pipeline de traitement RNASeq
 
-HclRNAseq est un module R pour le nettoyage et le traitement des données de comptage
+Cette pipeline regroupe les différents codes nécessaires pour la transformation des données brutes RNASeq en tableau de comptage (pseudo-alignement - transcriptome) étape par étape.
 
-## Pipeline
+Tous les codes proposés doivent être adaptés selon les besoins de l'étude.
 
-Contient les scripts pour les différentes étapes de traitement des données brutes RNASeq
+L'alignement sur le génome avec STAR et HTSeq n'est pas présenté.

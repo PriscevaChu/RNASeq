@@ -1,0 +1,11 @@
+Quand faire du paired end, single end…
+Optimiser les temps de calcul
+Installer les outils 
+Comment identifier outlier ?
+Que faire des outliers
+Stratégies à adopter en cas de fail du QC check
+Paramètres à utiliser lors de chaque phase du traitement
+Normalisation a effectuer pour l'analyse de données provenant de plusieurs bases différentes
+"Pièges" à éviter pouvant mener à une mauvaise interprétation des résultats
+
+...
