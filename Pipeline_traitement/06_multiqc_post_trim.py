@@ -4,7 +4,7 @@
 
 import multiqc
 
-multiqc.run("C:/Users/prisc/Documents/Etudes/RNA_melanome_rawdata/out/04_QC_fastqc_post_trim")
+multiqc.run("C:/Users/prisc/Documents/Data_RNASEQ/out/out_SRP315214/report_trimming")
 
 # Ou directement dans le terminal après avoir activer l'environnement contenant le package :
 # multiqc chemin_fastqc_files -o chemin_enregistrement_resultats

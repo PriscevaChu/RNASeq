@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /mnt/c/Users/prisc/Documents/Etudes/RNA_SEQ/data
+cd /mnt/c/Users/prisc/Documents/Data_RNASEQ/data/references
 
 mkdir -p reference_transcriptome
 

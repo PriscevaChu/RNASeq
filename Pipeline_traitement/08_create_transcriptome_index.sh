@@ -1,7 +1,7 @@
 #!/bin/bash
-cd mnt/c/Users/prisc/Documents/Etudes/RNA_SEQ/data/reference_transcriptome
+cd mnt/c/Users/prisc/Documents/Data_RNASEQ/data/references/reference_transcriptome
 
-mkdir -p ../../out/salmon_index
+mkdir -p ../../../out/references/salmon_index
 
 #Documentation https://salmon.readthedocs.io/en/latest/salmon.html#preparing-transcriptome-indices-mapping-based-mode
 # salmon index
@@ -14,4 +14,4 @@ mkdir -p ../../out/salmon_index
 
 
 # Download salmon from https://github.com/COMBINE-lab/salmon/releases 
-salmon index -k 31 -t Homo_sapiens.GRCh38.cdna.all.fa -p 7 -i ../../out/salmon_index/human_cdna.salmon_index
+salmon index -k 31 -t Homo_sapiens.GRCh38.cdna.all.fa -p 7 -i ../../../out/salmon_index/human_cdna.salmon_index
