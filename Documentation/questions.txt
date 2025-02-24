@@ -1,30 +1,38 @@
 QUESTIONS SUR L'ANALYSE DE DATA RNASEQ
 ======================================
 
-- Comment normaliser quand données provenant de plusieurs bases différentes
+A partir des données brutes :
+-----------------------------
 
-- Quand faire du paired end, single end…
-- Peut on utiliser uniquement les reads 1 quand le séquençage a été fait en paired-end ?
+- Comment faire quand données provenant de plusieurs sources/bases différentes ? 
 
-- Installer les outils -> je me suis débrouillé
-- Comment optimiser les temps de calcul, faire tourner sur une carte graphique les alignements, QC check
+- Quand faire du paired end, single end ? 
+- Peut on analyser uniquement les reads 1 quand le séquençage a été fait en paired-end ?
 
 - Stratégies à adopter en cas de fail du QC check après avoir trim les données...
-- Comment statuer si les catégories fail ont de l'importance ? 
+- Comment statuer si les catégories fail du QC ont de l'importance ? J'ai pu voir que dans certains cas ça ne pose pas de pb pour la suite de l'analyse
 
-- Paramètres à utiliser lors de chaque phase du traitement - QC, trimming, alignement,...
+- Quels paramètres utiliser lors de chaque phase du traitement -> QC, trimming, alignement,...
 
-- Quel est l'interet d'aligner sur le génome (en +) quand on fait du pseudo alignement salmon ?
+- Quel est l'intérêt d'aligner (en plus) sur le génome quand on fait du pseudo alignement salmon ? dans certaines pipelines les deux sont fait car alignement sur génome pour QC ? Est-ce "obligatoire" ?
 
-- Comment identifier outlier ?
-- Qui est un outlier, comment le justifier comme il faut 
-- Que faire des outliers
+- Est-ce que l'instrument utilisé pour le RNAseq doit etre le meme pour les samples qu'on veut comparer (exemple : certains samples illumina Novaseq et d'autres Nextseq)
 
-- Est-ce qu'on peut faire une DEG sur une sous sélection de gènes ? -> que une 100aine de gènes qui nous interessent
+
+A partir du tableau de comptes :
+-------------------------------
+
+- Peut on analyser ensemble des données de plusieurs sources/bases différentes ? Possible avec quels types de données ? (TPM, CPM, median of ratios...)
+
+- Comment identifier outlier ? Comment le justifier ? 
+
+- Est-ce qu'on peut faire une DEG sur une sous sélection de gènes ? -> que une 100aine de gènes qui nous intéressent => cela signifie qu'on ajuste les p-values sur beaucoup moins de gènes
 
 - "Pièges" à éviter pouvant mener à une mauvaise interprétation des résultats
 
 - Enrichissement de pathway après la DEG
 
-- Est-ce que l'instrument utilisé pour le RNAseq doit etre le meme pour les samples qu'on veut comparer 
-(exemple : certains samples illumina Novaseq et d'autres Nextseq)
+- Qu'est ce qui diffère dans l'analyse single cell?
+
+
+En bonus : -> Comment optimiser les temps de calcul ? faire tourner sur une carte graphique les alignements, est-ce que serveur vraiment indispensable ? 
