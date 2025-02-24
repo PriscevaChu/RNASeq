@@ -1,11 +1,30 @@
-Quand faire du paired end, single end…
-Optimiser les temps de calcul
-Installer les outils 
-Comment identifier outlier ?
-Que faire des outliers
-Stratégies à adopter en cas de fail du QC check
-Paramètres à utiliser lors de chaque phase du traitement
-Normalisation a effectuer pour l'analyse de données provenant de plusieurs bases différentes
-"Pièges" à éviter pouvant mener à une mauvaise interprétation des résultats
+QUESTIONS SUR L'ANALYSE DE DATA RNASEQ
+======================================
 
-...
+- Comment normaliser quand données provenant de plusieurs bases différentes
+
+- Quand faire du paired end, single end…
+- Peut on utiliser uniquement les reads 1 quand le séquençage a été fait en paired-end ?
+
+- Installer les outils -> je me suis débrouillé
+- Comment optimiser les temps de calcul, faire tourner sur une carte graphique les alignements, QC check
+
+- Stratégies à adopter en cas de fail du QC check après avoir trim les données...
+- Comment statuer si les catégories fail ont de l'importance ? 
+
+- Paramètres à utiliser lors de chaque phase du traitement - QC, trimming, alignement,...
+
+- Quel est l'interet d'aligner sur le génome (en +) quand on fait du pseudo alignement salmon ?
+
+- Comment identifier outlier ?
+- Qui est un outlier, comment le justifier comme il faut 
+- Que faire des outliers
+
+- Est-ce qu'on peut faire une DEG sur une sous sélection de gènes ? -> que une 100aine de gènes qui nous interessent
+
+- "Pièges" à éviter pouvant mener à une mauvaise interprétation des résultats
+
+- Enrichissement de pathway après la DEG
+
+- Est-ce que l'instrument utilisé pour le RNAseq doit etre le meme pour les samples qu'on veut comparer 
+(exemple : certains samples illumina Novaseq et d'autres Nextseq)
