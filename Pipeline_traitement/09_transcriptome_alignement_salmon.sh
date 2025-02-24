@@ -8,6 +8,8 @@ mkdir -p salmon_quantification/
 
 # Add loop over samples
 
+# EN PAIRED-END
+
 sample="xxxxx"
 
 salmon quant -i ../references/salmon_index/human_cdna.salmon_index \
@@ -18,3 +20,5 @@ salmon quant -i ../references/salmon_index/human_cdna.salmon_index \
              -o salmon_quantification/${sample}.salmon \
              --seqBias \
              --gcBias
+
+# EN SINGLE-END

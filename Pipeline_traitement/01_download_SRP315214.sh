@@ -1,9 +1,6 @@
 #!/bin/bash
 
-# Pas besoin d'être en bash 
-# Se mettre dans le bon dossier dans l appli pour utiliser la commande fastq-dump
-cd Desktop/sratoolkit.3.1.1-win64/sratoolkit.3.1.1-win64/bin
-
+# Lien vers les données
 # https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA722734&o=acc_s%3Aa
 
 # SRA id to download
@@ -26,13 +23,15 @@ SRR14267563
 SRR14267564
 SRR14267566"
 
+# La méthode la plus rapide est de prefecth les données avant de les télécharger
+
 for SRR in $sra_accessions
 do
     echo %time%
-    echo "Prefetch $SRR"
+    echo "Prefetch $SRR" 
     prefetch "$SRR"
     
     echo "Download $SRR"
-    fastq-dump --outdir C:/Users/prisc/Documents/Etudes/RNA_SEQ/data/data_SRP315214 --split-files --gzip "$SRR"
+    fastq-dump --outdir C:/Users/prisc/Documents/Etudes/RNA_SEQ/data/data_SRP315214 --gzip "$SRR" #--split-files quand PAIRED END (2 reads complémentaires)
     echo "=============================="
 done
