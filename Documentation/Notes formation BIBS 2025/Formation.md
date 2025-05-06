@@ -57,14 +57,14 @@ Si pic "étrange", à garder en tête et lors de la DEG essayer de comprendre d'
 
 ### Deux types de mapping (alignement)
 
-**Mapping sur le génome : **
+**Mapping sur le génome**
 
 - Si on a un reads qui mappent de façon équivalente sur deux gènes : plusieurs possibilités à choisir par l'utilisateur (soit compté 50/50 sont pas compté du tout, soir compté que sur l'un etc..)
 - le fichier SAM renvoie pour chaque read le chromosome sur lequel match le read et la position. Puis a l'aide d'un fichier de référence on sait que tel position sur tel chromosome correspond a tel gène
 - BAM = SAM compressé 
 - Attention au fichier d'index : version de l'annotation, il est important qu'il soit à jour
 
-**Mapping sur le transcriptome : **
+**Mapping sur le transcriptome**
 
 - Probabilité d'appartenir à chaque gène en analysant le reste du gène
 - Si transcriptome de bonne qualité on peut faire uniquement sur le transcrit et vérifier le signal sur le génome
@@ -72,34 +72,43 @@ Si pic "étrange", à garder en tête et lors de la DEG essayer de comprendre d'
 
 ### Création de l'index (trnascriptome)
 
-- Si on s'interesse aussi au virus ou bactérie dans un échantillon Humain, il faut concaténer les transcriptomes humains et des virus !! pour pouvoir reconnaitre les deux :
+- Si on s'interesse aussi au virus ou bactérie dans un échantillon Humain, il faut concaténer les transcriptomes humains et des virus !! pour pouvoir reconnaitre les deux (voir point 3. du doc en ligne). 
 
-Il est possible de concaténer des transcriptomes = voir point 3. du doc en ligne. On peut aussi concaténer transcriptome et génome pour éliminer les reads qui mappent sur une partie non codante du génome et ainsi éviter que certains reads ne mappent par erreur sur un transcrit (agit comme un leurre = decoy). 
-C'est un paramètre à ajouter dans la création de l'index :
-    - Paramètre `--decoys`  => ajouter en plus du transcriptome classique des sequences qui seront mappées mais qui par la suite ne seront pas quantfiées = peut permettre d'eviter certains biais selon les cas de figure
-    - Dans transcrit fa rajouter les chromosomes et dans decoys la liste des sequeneces qu'on ne voudra pas utiliser
-        ==> conseillé de faire "human cDNA + human as decoy sequences" dans la partie 1.1. Creating transcriptome index :
-     c'est plus précis car si un reads map mieux sur le genome il sera mapé dessus au lieu d'etre mappé a tord sur un transcrit et dans le compte on ne prendra pas en compte les reads mappés sur le génome, c'est ce qu'on précise dans decoy sequence
+- On peut aussi concaténer transcriptome et génome pour éliminer les reads qui mappent sur une partie non codante du génome et ainsi éviter que certains reads ne mappent par erreur sur un transcrit (agit comme un leurre = decoy). 
+C'est un paramètre à ajouter dans la création de l'index : `--decoys`. Cela ajoute, en plus du transcriptome classique, des sequences qui seront mappées mais qui par la suite **ne seront pas quantfiées**. Cela peut permettre d'eviter certains biais selon les cas de figure.
+
+Il est conseillé de faire "human cDNA + human as decoy sequences" dans la partie 1.1. Creating transcriptome index : c'est plus précis car si un reads map mieux sur le genome il sera mappé dessus au lieu d'etre mappé a tord sur un transcrit et dans le compte on ne prendra pas en compte les reads mappés sur le génome, c'est ce qu'on précise dans decoy sequence.
+
+*Comment faire ?* 
+1. Obtenir le transcriptome de référence
+2. Obtenir le génome de référence
+3. Concaténer génome et transcriptome
+4. Créer un fichier texte contenant la liste des chromosomes de l'espèce
+5. Créer l'index en ajoutant le paramètre `--decoys` avec la liste des sequences qu'on ne voudra pas utiliser
 
 - Taille des kmer pour la creation de l'index : 31 (valeur par defaut) bien pour des reads de 75 ou plus par contre si reads plus petits utiliser une autre valeur de -k (paramètre kmer) 
 
 - Annotation des gènes : ENSG -> gène ; ENST -> transcrit
 
-#### Format fasta et fastq 
+### Format fasta et fastq 
 
 **fastq :**
  
+```
 @nomsequence
 sequence
 +
 qualité
+```
 
 **fasta :**
 
+```
 > nomsequence
 sequence (parfois sur plrs lignes)
 
 >
+```
 
 ### Paramètres et détail
 
